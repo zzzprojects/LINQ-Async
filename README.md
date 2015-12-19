@@ -30,6 +30,8 @@ public async Task<IEnumerable<Customer>> MyAsyncMethod(CancellationToken cancell
 
 > If a cancellationToken is used, "ThrowIfCancellationRequested()" is invoked in the Enumerator.MoveNext() method.
 
+**[Learn more](https://github.com/zzzprojects/LINQ-AsyncExtensions/wiki/LINQ-AsyncExtensions)**
+
 ## LINQ Async Task Extensions
 **Async Task Extension methods to perform operation on LINQ to objects asynchronously (Task&lt;&lt;IEnumerable&lt;T&gt;&gt;&gt;).**
 
@@ -52,6 +54,8 @@ public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellati
     // Task<IEnumerable<int>> task = MyAsyncMethod(cancellationToken).AsEnumerableAsync(cancellationToken);
 }
 ```
+
+**[Learn more](https://github.com/zzzprojects/LINQ-AsyncExtensions/wiki/LINQ-AsyncTaskExtensions)**
 
 ## Support
 Contact our outstanding customer support for any request. We usually answer within the next business day, hour, or minutes!
