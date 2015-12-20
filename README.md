@@ -3,7 +3,7 @@
 ## Download
 Version | NuGet | NuGet Install
 ------------ | :-------------: | :-------------:
-Z.Linq.AsyncExtensions | <a href="https://www.nuget.org/packages/Z.Linq.AsyncExtensions/" target="_blank" alt="download nuget"><img src="https://img.shields.io/nuget/v/Z.Linq.AsyncExtensions.svg?style=flat-square" /></a> <a href="https://www.nuget.org/packages/Z.Linq.AsyncExtensions/" target="_blank" alt="download nuget"><img src="https://img.shields.io/nuget/dt/Z.Linq.AsyncExtensions.svg?style=flat-square" /></a> | ```PM> Install-Package Z.Linq.AsyncExtensions```
+Z.Linq.AsyncExtensions | <a href="https://www.nuget.org/packages/Z.Linq.Async/" target="_blank" alt="download nuget"><img src="https://img.shields.io/nuget/v/Z.Linq.Async.svg?style=flat-square" /></a> <a href="https://www.nuget.org/packages/Z.Linq.Async/" target="_blank" alt="download nuget"><img src="https://img.shields.io/nuget/dt/Z.Linq.Async.svg?style=flat-square" /></a> | ```PM> Install-Package Z.Linq.Async```
 
 ## Features
 - LINQ Async Extensions
