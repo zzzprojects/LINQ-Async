@@ -75,4 +75,4 @@ Contact our outstanding customer support for any request. We usually answer with
   - [Eval SQL.NET](https://github.com/zzzprojects/Eval-SQL.NET)
 - Others
   - [Extension Methods Library](https://github.com/zzzprojects/Z.ExtensionMethods/)
-  - [Linq AsyncExtensions](https://github.com/zzzprojects/Linq-AsyncExtensions)
+  - [LINQ Async](https://github.com/zzzprojects/Linq-AsyncExtensions)
