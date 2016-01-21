@@ -40,10 +40,13 @@ Async Predicate extension methods allow to perform operation using an async pred
 **Support:**
 - OrderByPredicateCompletion
 - StartPredicateConcurrently
-- Allow default value when none is specified
+- Default value when none is specified
 
 ```chsarp
 // Using Z.Linq
+LinqAsyncManager.DefautValueOrderByPredicateCompletion = false;
+LinqAsyncManager.StartPredicateConcurrently = false;
+
 public Task<IEnumerable<Customer>> MyAsyncTaskMethod(CancellationToken cancellationToken)
 {
     List<Customer> customers = DB.GetCustomers();
