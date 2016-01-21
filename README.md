@@ -101,9 +101,11 @@ public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellati
     IEnumerable<Task<List<Customer>>> task =  WebService.GetCustomers(4);
     
     // GET the customer list from the first task completed
+    var taskFirstCompleted = task.SelectResultByCompletion()
+                                 .First();
+                   
     // GET the five first customers which the predicate has completed
-    var task = task.SelectResultByCompletion()
-                   .First()
+    var task =     taskFirstCompleted
                    .WhereAsync(c => MyAsyncPredicate(DB.IsCustomerActiveAsync(c)))
                    .OrderByPredicateCompletion()
                    .Take(5)
