@@ -13,7 +13,7 @@ Z.Linq.AsyncExtensions | <a href="https://www.nuget.org/packages/Z.Linq.Async/" 
 _All LINQ Enumerable extensions methods are supported._
 
 ## LINQ Async Extensions
-Async extension methods to perform operation on LINQ to objects asynchronously.
+Async extension methods allow to perform operation on LINQ to objects asynchronously.
 
 ```chsarp
 // Using Z.Linq
@@ -59,7 +59,7 @@ public Task<IEnumerable<Customer>> MyAsyncTaskMethod(CancellationToken cancellat
 **[Learn more](https://github.com/zzzprojects/LINQ-AsyncExtensions/wiki/LINQ-AsyncPredicateExtensions)**
 
 ## LINQ Async Task Extensions
-Async Task Extension methods to perform operation on LINQ to objects asynchronously (Task&lt;&lt;IEnumerable&lt;T&gt;&gt;&gt;).
+Async Task extension methods allow to perform operation on Task&lt;&lt;IEnumerable&lt;T&gt;&gt;&gt;.
 
 ```chsarp
 // Using Z.Linq
