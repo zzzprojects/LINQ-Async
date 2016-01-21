@@ -40,6 +40,7 @@ Async Predicate extension methods allow to perform operation using an async pred
 **Support:**
 - OrderByPredicateCompletion
 - StartPredicateConcurrently
+- Allow default value when none is specified
 
 ```chsarp
 // Using Z.Linq
