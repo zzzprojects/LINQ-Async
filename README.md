@@ -57,12 +57,6 @@ public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellati
 
 **[Learn more](https://github.com/zzzprojects/LINQ-AsyncExtensions/wiki/LINQ-AsyncTaskExtensions)**
 
-## Support
-Contact our outstanding customer support for any request. We usually answer within the next business day, hour, or minutes!
-
-- [Documentation](https://github.com/zzzprojects/LINQ-AsyncExtensions/wiki)
-- sales@zzzprojects.com
-
 ## More Projects
 - Entity Framework
   - [NET Entity Framework Extensions](http://www.zzzprojects.com/products/dotnet-development/entity-framework-extensions/)
@@ -76,3 +70,7 @@ Contact our outstanding customer support for any request. We usually answer with
 - Others
   - [Extension Methods Library](https://github.com/zzzprojects/Z.ExtensionMethods/)
   - [LINQ Async](https://github.com/zzzprojects/Linq-AsyncExtensions)
+
+**Need more info?** info@zzzprojects.com
+
+Contact our outstanding customer support for any request. We usually answer within the next business day, hour, or minutes!
