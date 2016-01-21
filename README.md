@@ -39,7 +39,7 @@ Async Predicate extension methods allow to perform operation using an async pred
 
 **Support:**
 - OrderByPredicateCompletion
-- StartAllPredicate
+- StartPredicateConcurrently
 
 ```chsarp
 // Using Z.Linq
@@ -85,18 +85,29 @@ public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellati
 ## LINQ Async Enumerable Extensions
 Async Task extension methods allow to perform operation on IEnumerable&lt;Task&lt;T&gt;&gt;.
 
+**Support:**
+- SelectResult
+- SelectResultByCompletion
+
 ```chsarp
 // Using Z.Linq
 
 public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellationToken)
 {
+    int customerID = 4;
+    
+    // GET customer from concurrent web service
+    IEnumerable<Task<List<Customer>>> task =  WebService.GetCustomers(4);
+    
+    // GET the customer list from the first task completed
     // GET the five first customers which the predicate has completed
-    var task = list.WhereAsync(c => MyAsyncPredicate(DB.IsCustomerActiveAsync(c)))
-                         .OrderByPredicateCompletion()
-                         .Take(5)
-                         .ToList();
-
-
+    var task = task.SelectResultByCompletion()
+                   .First()
+                   .WhereAsync(c => MyAsyncPredicate(DB.IsCustomerActiveAsync(c)))
+                   .OrderByPredicateCompletion()
+                   .Take(5)
+                   .ToList();
+    
     // ... synchronous code ...
     
     return task;
