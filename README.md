@@ -1,4 +1,4 @@
-##Async extension methods for LINQ (Language Integrated Query)##
+##Use and chain async extension method in LINQ (Langugage Integrated Query)##
 
 ## Download
 Version | NuGet | NuGet Install
