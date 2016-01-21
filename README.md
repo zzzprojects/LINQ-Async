@@ -105,11 +105,10 @@ public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellati
                                  .First();
                    
     // GET the five first customers which the predicate has completed
-    var task =     taskFirstCompleted
-                   .WhereAsync(c => MyAsyncPredicate(DB.IsCustomerActiveAsync(c)))
-                   .OrderByPredicateCompletion()
-                   .Take(5)
-                   .ToList();
+    var task = taskFirstCompleted.WhereAsync(c => MyAsyncPredicate(DB.IsCustomerActiveAsync(c)))
+                                 .OrderByPredicateCompletion()
+                                 .Take(5)
+                                 .ToList();
     
     // ... synchronous code ...
     
