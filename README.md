@@ -100,7 +100,7 @@ public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellati
     // GET customer from concurrent web service
     IEnumerable<Task<List<Customer>>> task =  WebService.GetCustomers(4);
     
-    // GET the customer list from the first task completed
+    // GET the customer list from the first web service completed
     var taskFirstCompleted = task.SelectResultByCompletion()
                                  .First();
                    
