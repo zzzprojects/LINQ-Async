@@ -13,19 +13,19 @@ Z.Linq.AsyncExtensions | <a href="https://www.nuget.org/packages/Z.Linq.Async/" 
 _All LINQ Enumerable extensions methods are supported._
 
 ## LINQ Async Extensions
-**Async Extension methods to perform operation on LINQ to objects asynchronously.**
+Async extension methods to perform operation on LINQ to objects asynchronously.
 
 ```chsarp
 // Using Z.Linq
 
-public async Task<IEnumerable<Customer>> MyAsyncMethod(CancellationToken cancellationToken)
+public Task<IEnumerable<Customer>> MyAsyncMethod(CancellationToken cancellationToken)
 {
     List<Customer> customers = DB.GetCustomers();
     var taskFilter = list.WhereAsync(c => c.IsActive, cancellationToken);
 
     ... code ...
     
-    return await taskFilter;
+    return taskFilter;
 }
 ```
 
@@ -34,32 +34,32 @@ public async Task<IEnumerable<Customer>> MyAsyncMethod(CancellationToken cancell
 **[Learn more](https://github.com/zzzprojects/LINQ-AsyncExtensions/wiki/LINQ-AsyncExtensions)**
 
 ## LINQ Async Predicate Extensions
-**Async Task Extension methods to perform operation on LINQ to objects asynchronously (Task&lt;&lt;IEnumerable&lt;T&gt;&gt;&gt;).**
+Async Predicate extension methods allow to perform operation using an async predicate on LINQ to objects asynchronously.
+
+**Support:**
+- OrderByPredicateCompletion
+- StartAllPredicate
 
 ```chsarp
 // Using Z.Linq
-
-public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellationToken)
+public Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellationToken)
 {
-    Task<IEnumerable<Customer>> task = MyAsyncMethod(cancellationToken);
-
-    // WITH LINQ Task Extensions
-    Task<IEnumerable<Customer>> taskFilter = task.WhereAsync(x => x.HasPhone, cancellationToken);
-    Task<List<Customer>> taskList = taskFilter.ToListAsync(cancellationToken);
+    List<Customer> customers = DB.GetCustomers();
+    
+    var taskFilter = list.WhereAsync(c => MyAsyncPredicate(DB.IsCustomerActiveAsync(c)))
+                         .OrderByPredicateCompletion()
+                         .Take(5);
 
     ... code ...
     
-    return await taskList;
-    
-    // Use AsEnumerableAsync to convert Task<List<T>>, Task<IList<T>>, etc.. to Task<IEnumerable<T>>
-    // Task<IEnumerable<int>> task = MyAsyncMethod(cancellationToken).AsEnumerableAsync(cancellationToken);
+    return taskFilter;
 }
 ```
 
 **[Learn more](https://github.com/zzzprojects/LINQ-AsyncExtensions/wiki/LINQ-AsyncPredicateExtensions)**
 
 ## LINQ Async Task Extensions
-**Async Task Extension methods to perform operation on LINQ to objects asynchronously (Task&lt;&lt;IEnumerable&lt;T&gt;&gt;&gt;).**
+Async Task Extension methods to perform operation on LINQ to objects asynchronously (Task&lt;&lt;IEnumerable&lt;T&gt;&gt;&gt;).
 
 ```chsarp
 // Using Z.Linq
