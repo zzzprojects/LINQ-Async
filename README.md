@@ -21,11 +21,11 @@ Async extension methods to perform operation on LINQ to objects asynchronously.
 public Task<IEnumerable<Customer>> MyAsyncMethod(CancellationToken cancellationToken)
 {
     List<Customer> customers = DB.GetCustomers();
-    var taskFilter = list.WhereAsync(c => c.IsActive, cancellationToken);
+    var task = list.WhereAsync(c => c.IsActive, cancellationToken);
 
     ... code ...
     
-    return taskFilter;
+    return task;
 }
 ```
 
@@ -42,17 +42,17 @@ Async Predicate extension methods allow to perform operation using an async pred
 
 ```chsarp
 // Using Z.Linq
-public Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellationToken)
+public Task<IEnumerable<Customer>> MyAsyncTaskMethod(CancellationToken cancellationToken)
 {
     List<Customer> customers = DB.GetCustomers();
     
-    var taskFilter = list.WhereAsync(c => MyAsyncPredicate(DB.IsCustomerActiveAsync(c)))
-                         .OrderByPredicateCompletion()
-                         .Take(5);
+    // GET all customers by predicate completion
+    var task = list.WhereAsync(c => MyAsyncPredicate(DB.IsCustomerActiveAsync(c)))
+                         .OrderByPredicateCompletion();
 
     ... code ...
     
-    return taskFilter;
+    return task;
 }
 ```
 
@@ -66,18 +66,16 @@ Async Task Extension methods to perform operation on LINQ to objects asynchronou
 
 public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellationToken)
 {
-    Task<IEnumerable<Customer>> task = MyAsyncMethod(cancellationToken);
+    // GET the five first customers which the predicate has completed
+    var task = list.WhereAsync(c => MyAsyncPredicate(DB.IsCustomerActiveAsync(c)))
+                         .OrderByPredicateCompletion()
+                         .Take(5)
+                         .ToList();
 
-    // WITH LINQ Task Extensions
-    Task<IEnumerable<Customer>> taskFilter = task.WhereAsync(x => x.HasPhone, cancellationToken);
-    Task<List<Customer>> taskList = taskFilter.ToListAsync(cancellationToken);
 
     ... code ...
     
-    return await taskList;
-    
-    // Use AsEnumerableAsync to convert Task<List<T>>, Task<IList<T>>, etc.. to Task<IEnumerable<T>>
-    // Task<IEnumerable<int>> task = MyAsyncMethod(cancellationToken).AsEnumerableAsync(cancellationToken);
+    return await task;
 }
 ```
 
