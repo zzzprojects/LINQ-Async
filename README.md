@@ -9,6 +9,7 @@ Z.Linq.AsyncExtensions | <a href="https://www.nuget.org/packages/Z.Linq.Async/" 
 - LINQ Async Extensions
 - LINQ Async Predicate Extensions
 - LINQ Async Task Extensions
+- LINQ Async Enumerable Task Extensions
 
 _All LINQ Enumerable extensions methods are supported._
 
@@ -59,7 +60,30 @@ public Task<IEnumerable<Customer>> MyAsyncTaskMethod(CancellationToken cancellat
 **[Learn more](https://github.com/zzzprojects/LINQ-AsyncExtensions/wiki/LINQ-AsyncPredicateExtensions)**
 
 ## LINQ Async Task Extensions
-Async Task extension methods allow to perform operation on Task&lt;&lt;IEnumerable&lt;T&gt;&gt;&gt;.
+Async Task extension methods allow to perform operation on Task&lt;IEnumerable&lt;T&gt;&gt;.
+
+```chsarp
+// Using Z.Linq
+
+public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellationToken)
+{
+    // GET the five first customers which the predicate has completed
+    var task = list.WhereAsync(c => MyAsyncPredicate(DB.IsCustomerActiveAsync(c)))
+                         .OrderByPredicateCompletion()
+                         .Take(5)
+                         .ToList();
+
+
+    // ... synchronous code ...
+    
+    return task;
+}
+```
+
+**[Learn more](https://github.com/zzzprojects/LINQ-AsyncExtensions/wiki/LINQ-AsyncTaskExtensions)**
+
+## LINQ Async Enumerable Extensions
+Async Task extension methods allow to perform operation on IEnumerable&lt;Task&lt;T&gt;&gt;.
 
 ```chsarp
 // Using Z.Linq
