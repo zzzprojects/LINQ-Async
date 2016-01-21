@@ -13,16 +13,14 @@ namespace Z.Linq
 {
     public static partial class TaskFactoryExtensions
     {
-        private static async Task<TResult> FromEnumerableAsync<T, TAsyncEnumerable, TResult>(this TaskFactory taskFactory, T source, Func<TAsyncEnumerable, TResult> func, Func<T, CancellationToken, TAsyncEnumerable> converter, CancellationToken cancellationToken = default(CancellationToken))
+        private static Task<TResult> FromTaskEnumerable<T, TAsyncEnumerable, TResult>(this TaskFactory taskFactory, T source, Func<TAsyncEnumerable, TResult> func, Func<T, CancellationToken, TAsyncEnumerable> converter, CancellationToken cancellationToken = default(CancellationToken))
         {
-            // taskFactory is not used, however factory.StartNew could be used in future.
-            return await Task.Run(() => func(converter(source, cancellationToken)), cancellationToken).ConfigureAwait(false);
+            return Task.Run(() => func(converter(source, cancellationToken)), cancellationToken);
         }
 
-        private static async Task<TResult> FromEnumerableAsync<T, TAsyncEnumerable, TResult>(this TaskFactory taskFactory, Task<T> task, Func<TAsyncEnumerable, TResult> func, Func<T, CancellationToken, TAsyncEnumerable> converter, CancellationToken cancellationToken = default(CancellationToken))
+        private static Task<TResult> FromTaskEnumerable<T, TAsyncEnumerable, TResult>(this TaskFactory taskFactory, Task<T> task, Func<TAsyncEnumerable, TResult> func, Func<T, CancellationToken, TAsyncEnumerable> converter, CancellationToken cancellationToken = default(CancellationToken))
         {
-            // taskFactory is not used, however factory.ContinueWhenAll could be used in future.
-            return await task.ContinueWith(t => func(converter(task.Result, cancellationToken)), cancellationToken).ConfigureAwait(false);
+            return task.ContinueWith(t => func(converter(task.Result, cancellationToken)), cancellationToken);
         }
     }
 }
