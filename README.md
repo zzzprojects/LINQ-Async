@@ -86,6 +86,7 @@ public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellati
 Async Task extension methods allow to perform operation on IEnumerable&lt;Task&lt;T&gt;&gt;.
 
 **Support:**
+- OrderByCompletion
 - SelectResult
 - SelectResultByCompletion
 
