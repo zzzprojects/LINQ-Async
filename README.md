@@ -23,7 +23,7 @@ public Task<IEnumerable<Customer>> MyAsyncMethod(CancellationToken cancellationT
     List<Customer> customers = DB.GetCustomers();
     var task = list.WhereAsync(c => c.IsActive, cancellationToken);
 
-    ... code ...
+    // ... synchronous code ...
     
     return task;
 }
@@ -50,7 +50,7 @@ public Task<IEnumerable<Customer>> MyAsyncTaskMethod(CancellationToken cancellat
     var task = list.WhereAsync(c => MyAsyncPredicate(DB.IsCustomerActiveAsync(c)))
                          .OrderByPredicateCompletion();
 
-    ... code ...
+    // ... synchronous code ...
     
     return task;
 }
@@ -73,9 +73,9 @@ public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellati
                          .ToList();
 
 
-    ... code ...
+    // ... synchronous code ...
     
-    return await task;
+    return task;
 }
 ```
 
