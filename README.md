@@ -7,6 +7,7 @@ Z.Linq.AsyncExtensions | <a href="https://www.nuget.org/packages/Z.Linq.Async/" 
 
 ## Features
 - LINQ Async Extensions
+- LINQ Async Predicate Extensions
 - LINQ Async Task Extensions
 
 _All LINQ Enumerable extensions methods are supported._
@@ -31,6 +32,31 @@ public async Task<IEnumerable<Customer>> MyAsyncMethod(CancellationToken cancell
 > If a cancellationToken is used, "ThrowIfCancellationRequested()" is invoked in the Enumerator.MoveNext() method.
 
 **[Learn more](https://github.com/zzzprojects/LINQ-AsyncExtensions/wiki/LINQ-AsyncExtensions)**
+
+## LINQ Async Predicate Extensions
+**Async Task Extension methods to perform operation on LINQ to objects asynchronously (Task&lt;&lt;IEnumerable&lt;T&gt;&gt;&gt;).**
+
+```chsarp
+// Using Z.Linq
+
+public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellationToken)
+{
+    Task<IEnumerable<Customer>> task = MyAsyncMethod(cancellationToken);
+
+    // WITH LINQ Task Extensions
+    Task<IEnumerable<Customer>> taskFilter = task.WhereAsync(x => x.HasPhone, cancellationToken);
+    Task<List<Customer>> taskList = taskFilter.ToListAsync(cancellationToken);
+
+    ... code ...
+    
+    return await taskList;
+    
+    // Use AsEnumerableAsync to convert Task<List<T>>, Task<IList<T>>, etc.. to Task<IEnumerable<T>>
+    // Task<IEnumerable<int>> task = MyAsyncMethod(cancellationToken).AsEnumerableAsync(cancellationToken);
+}
+```
+
+**[Learn more](https://github.com/zzzprojects/LINQ-AsyncExtensions/wiki/LINQ-AsyncPredicateExtensions)**
 
 ## LINQ Async Task Extensions
 **Async Task Extension methods to perform operation on LINQ to objects asynchronously (Task&lt;&lt;IEnumerable&lt;T&gt;&gt;&gt;).**
