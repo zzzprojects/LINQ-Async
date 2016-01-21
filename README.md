@@ -50,7 +50,7 @@ public Task<IEnumerable<Customer>> MyAsyncTaskMethod(CancellationToken cancellat
     
     // GET all customers by predicate completion
     var task = list.WhereAsync(c => MyAsyncPredicate(DB.IsCustomerActiveAsync(c)))
-                         .OrderByPredicateCompletion();
+                   .OrderByPredicateCompletion();
 
     // ... synchronous code ...
     
