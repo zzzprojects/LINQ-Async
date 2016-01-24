@@ -38,8 +38,8 @@ namespace Z.Linq.Async
             Predicate = predicate;
             Source = source;
 
-            OrderByPredicateCompletion = LinqAsyncManager.DefaultValueOrderByPredicateCompletion;
-            StartAllPredicate = LinqAsyncManager.DefaultValueStartAllPredicate;
+            OrderByPredicateCompletion = LinqAsyncManager.DefaultValue.OrderByPredicateCompletion;
+            StartPredicateConcurrently = LinqAsyncManager.DefaultValue.StartPredicateConcurrently;
         }
 
         public AsyncWhereEnumerable(IEnumerable<T> source, Func<T, int, Task<bool>> predicate, CancellationToken cancellationToken)
@@ -48,8 +48,8 @@ namespace Z.Linq.Async
             Predicate2 = predicate;
             Source = source;
 
-            OrderByPredicateCompletion = LinqAsyncManager.DefaultValueOrderByPredicateCompletion;
-            StartAllPredicate = LinqAsyncManager.DefaultValueStartAllPredicate;
+            OrderByPredicateCompletion = LinqAsyncManager.DefaultValue.OrderByPredicateCompletion;
+            StartPredicateConcurrently = LinqAsyncManager.DefaultValue.StartPredicateConcurrently;
         }
 
         public AsyncWhereEnumerable(Task<IEnumerable<T>> source, Func<T, Task<bool>> predicate, CancellationToken cancellationToken)
@@ -58,8 +58,8 @@ namespace Z.Linq.Async
             Predicate = predicate;
             SourceTask = source;
 
-            OrderByPredicateCompletion = LinqAsyncManager.DefaultValueOrderByPredicateCompletion;
-            StartAllPredicate = LinqAsyncManager.DefaultValueStartAllPredicate;
+            OrderByPredicateCompletion = LinqAsyncManager.DefaultValue.OrderByPredicateCompletion;
+            StartPredicateConcurrently = LinqAsyncManager.DefaultValue.StartPredicateConcurrently;
         }
 
         public AsyncWhereEnumerable(Task<IEnumerable<T>> source, Func<T, int, Task<bool>> predicate, CancellationToken cancellationToken)
@@ -68,15 +68,15 @@ namespace Z.Linq.Async
             Predicate2 = predicate;
             SourceTask = source;
 
-            OrderByPredicateCompletion = LinqAsyncManager.DefaultValueOrderByPredicateCompletion;
-            StartAllPredicate = LinqAsyncManager.DefaultValueStartAllPredicate;
+            OrderByPredicateCompletion = LinqAsyncManager.DefaultValue.OrderByPredicateCompletion;
+            StartPredicateConcurrently = LinqAsyncManager.DefaultValue.StartPredicateConcurrently;
         }
 
         private Func<T, Task<bool>> Predicate { get; }
 
         private Func<T, int, Task<bool>> Predicate2 { get; }
 
-        public bool StartAllPredicate { get; set; }
+        public bool StartPredicateConcurrently { get; set; }
 
         public bool OrderByPredicateCompletion { get; set; }
 
@@ -102,7 +102,7 @@ namespace Z.Linq.Async
                     var enumerator2 = Source.Select(x => Task.Run(() => new Tuple<T, bool>(x, Predicate(x).Result), CancellationToken)).OrderByCompletion().Where(x => x.Result.Item2).Select(x => x.Result.Item1);
                     enumerator = enumerator2.GetEnumerator();
                 }
-                else if (StartAllPredicate)
+                else if (StartPredicateConcurrently)
                 {
                     var enumerator2 = Source.Select(x => Task.Run(() => new Tuple<T, bool>(x, Predicate(x).Result), CancellationToken)).ToList().Where(x => x.Result.Item2).Select(x => x.Result.Item1);
                     enumerator = enumerator2.GetEnumerator();
@@ -120,7 +120,7 @@ namespace Z.Linq.Async
                     var enumerator2 = Source.Select(x => Task.Run(() => new Tuple<T, bool>(x, Predicate(x).Result), CancellationToken)).OrderByCompletion().Where(x => x.Result.Item2).Select(x => x.Result.Item1);
                     enumerator = enumerator2.GetEnumerator();
                 }
-                else if (StartAllPredicate)
+                else if (StartPredicateConcurrently)
                 {
                     var enumerator2 = Source.Select(x => Task.Run(() => new Tuple<T, bool>(x, Predicate(x).Result), CancellationToken)).ToList().Where(x => x.Result.Item2).Select(x => x.Result.Item1);
                     enumerator = enumerator2.GetEnumerator();

@@ -14,9 +14,9 @@ namespace Z.Linq
 {
     public static partial class EnumerableAsync
     {
-        public static Task<IEnumerable<TSource>> SkipAsync<TSource>(this IEnumerable<Task<TSource>> source, int count, CancellationToken cancellationToken = default(CancellationToken))
+        public static Task<IEnumerable<TSource>> SelectResultByCompletion<TSource>(this IEnumerable<Task<TSource>> source, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return Task.Factory.FromEnumerable(source.Select(x => x.Result), count, Enumerable.Skip, cancellationToken);
+            return Task.FromResult(source.OrderByCompletion().Select(x => x.Result));
         }
     }
 }

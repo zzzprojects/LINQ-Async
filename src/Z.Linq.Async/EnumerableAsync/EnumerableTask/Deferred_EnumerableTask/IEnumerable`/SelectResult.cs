@@ -14,9 +14,9 @@ namespace Z.Linq
 {
     public static partial class EnumerableAsync
     {
-        public static Task<TSource[]> ToArrayAsync<TSource>(this IEnumerable<Task<TSource>> source, CancellationToken cancellationToken = default(CancellationToken))
+        public static Task<IEnumerable<TSource>> SelectResult<TSource>(this IEnumerable<Task<TSource>> source, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return Task.Factory.FromEnumerable(source.Select(x => x.Result), Enumerable.ToArray, cancellationToken);
+            return Task.FromResult(source.Select(x => x.Result));
         }
     }
 }

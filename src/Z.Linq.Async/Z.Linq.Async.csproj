@@ -44,6 +44,9 @@
     <AssemblyOriginatorKeyFile>C:\Users\Jonathan\OneDrive\Documents\Release\zzzproject.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\OrderByCompletion.cs" />
+    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\SelectResultByCompletion.cs" />
+    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\SelectResult.cs" />
     <Compile Include="EnumerableAsync\LINQ\Deferred_Task\Array\OrderBy.cs" />
     <Compile Include="EnumerableAsync\LINQ\Deferred_Task\Array\OrderByDescending.cs" />
     <Compile Include="EnumerableAsync\LINQ\Deferred_Task\AsyncWhereEnumerable`\AsEnumerable.cs" />
@@ -199,39 +202,18 @@
     <Compile Include="EnumerableAsync\PredicateAsync\Immediate_Task_AsyncFunc\`AsyncWhereEnumerable\LongCount.cs" />
     <Compile Include="EnumerableAsync\PredicateAsync\Immediate_Task_AsyncFunc\`AsyncWhereEnumerable\Single.cs" />
     <Compile Include="EnumerableAsync\PredicateAsync\Immediate_Task_AsyncFunc\`AsyncWhereEnumerable\SingleOrDefault.cs" />
-    <Compile Include="EnumerableAsync\Special\WhereAsyncEnumerable`\OrderByPredicateCompletion.cs" />
-    <Compile Include="EnumerableAsync\Special\WhereAsyncEnumerable`\StartAllPredicate.cs" />
-    <Compile Include="Extensions\TaskFactory\AsyncWhereEnumerable`\FromTaskEnumerable.cs" />
-    <Compile Include="Extensions\TaskFactory\IEnumerable`\FromWhereTaskEnumerable.cs" />
-    <Compile Include="Extensions\TaskFactory\IEnumerable`\FromWhereEnumerable.cs" />
-    <Compile Include="Extensions\TaskFactory\IEnumerable`\FromEnumerable.cs" />
-    <Compile Include="Extensions\TaskFactory\IOrdoredEnumerable`\FromEnumerable.cs" />
+    <Compile Include="EnumerableAsync\WhereAsyncEnumerable`\OrderByPredicateCompletion.cs" />
+    <Compile Include="EnumerableAsync\WhereAsyncEnumerable`\StartPredicateConcurrently.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\AsyncWhereEnumerable`\FromTaskEnumerable.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\IEnumerable`\FromWhereTaskEnumerable.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\IEnumerable`\FromWhereEnumerable.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\IEnumerable`\FromEnumerable.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\IOrdoredEnumerable`\FromEnumerable.cs" />
     <Compile Include="EnumerableAsync\AsyncEnumerable.cs" />
     <Compile Include="EnumerableAsync\AsyncEnumerable`.cs" />
     <Compile Include="EnumerableAsync\AsyncEnumerator.cs" />
     <Compile Include="EnumerableAsync\AsyncEnumerator`.cs" />
     <Compile Include="EnumerableAsync\AsyncOrderedEnumerable`.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\AsEnumerableAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\ConcatAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\DefaultIfEmptyAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\DistinctAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\ExceptAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\GroupByAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\GroupJoinAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\IntersectAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\JoinAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\OrderByAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\OrderByDescendingAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\ReverseAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\SelectAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\SelectManyAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\SkipAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\SkipWhileAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\TakeAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\TakeWhileAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\UnionAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\WhereAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\ZipAsync.cs" />
     <Compile Include="EnumerableAsync\LINQ\Deferred_Task\Array\Cast.cs" />
     <Compile Include="EnumerableAsync\LINQ\Deferred_Task\Array\Concat.cs" />
     <Compile Include="EnumerableAsync\LINQ\Deferred_Task\Array\DefaultIfEmpty.cs" />
@@ -361,29 +343,6 @@
     <Compile Include="EnumerableAsync\LINQ\Deferred_Enumerable\IEnumerable`\ZipAsync.cs" />
     <Compile Include="EnumerableAsync\LINQ\Deferred_Enumerable\IOrderedEnumerable`\ThenByAsync.cs" />
     <Compile Include="EnumerableAsync\LINQ\Deferred_Enumerable\IOrderedEnumerable`\ThenByDescendingAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\AggregateAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\AllAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\AnyAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\AverageAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\ContainsAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\CountAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\ElementAtAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\ElementAtOrDefaultAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\FirstAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\FirstOrDefaultAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\LastAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\LastOrDefaultAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\LongCountAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\MaxAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\MinAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\SequenceEqualAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\SingleAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\SingleOrDefaultAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\SumAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\ToArrayAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\ToDictionaryAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\ToListAsync.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\ToLookupAsync.cs" />
     <Compile Include="EnumerableAsync\LINQ\Immediate_Task\IEnumerable`\Aggregate.cs" />
     <Compile Include="EnumerableAsync\LINQ\Immediate_Task\IEnumerable`\All.cs" />
     <Compile Include="EnumerableAsync\LINQ\Immediate_Task\IEnumerable`\Any.cs" />
@@ -464,28 +423,29 @@
     <Compile Include="EnumerableAsync\PredicateAsync\Immediate_Enumerable_AsyncFunc\IEnumerable`\SingleAsync.cs" />
     <Compile Include="EnumerableAsync\PredicateAsync\Immediate_Enumerable_AsyncFunc\IEnumerable`\SingleOrDefaultAsync.cs" />
     <Compile Include="EnumerableAsync\AsyncWhereEnumerable`.cs" />
-    <Compile Include="Extensions\IEnumerable`Task`\OrderByCompletion.cs" />
-    <Compile Include="Extensions\TaskFactory\Array\FromTaskEnumerable.cs" />
-    <Compile Include="Extensions\TaskFactory\Collection`\FromTaskEnumerable.cs" />
-    <Compile Include="Extensions\TaskFactory\Dictionary`2\FromTaskEnumerable.cs" />
-    <Compile Include="Extensions\TaskFactory\FromEnumerableAsync.cs" />
-    <Compile Include="Extensions\TaskFactory\ICollection`\FromTaskEnumerable.cs" />
-    <Compile Include="Extensions\TaskFactory\IDictionary`2\FromTaskEnumerable.cs" />
-    <Compile Include="Extensions\TaskFactory\IEnumerable\FromTaskEnumerable.cs" />
-    <Compile Include="Extensions\TaskFactory\IEnumerable`\FromTaskEnumerable.cs" />
-    <Compile Include="Extensions\TaskFactory\IList`\FromTaskEnumerable.cs" />
-    <Compile Include="Extensions\TaskFactory\ILookup`2\FromTaskEnumerable.cs" />
-    <Compile Include="Extensions\TaskFactory\IOrdoredEnumerable`\FromTaskEnumerable.cs" />
-    <Compile Include="Extensions\TaskFactory\IReadOnlyCollection`\FromTaskEnumerable.cs" />
-    <Compile Include="Extensions\TaskFactory\IReadOnlyDictionary`2\FromTaskEnumerable.cs" />
-    <Compile Include="Extensions\TaskFactory\IReadOnlyList`\FromTaskEnumerable.cs" />
-    <Compile Include="Extensions\TaskFactory\List\FromTaskEnumerable.cs" />
-    <Compile Include="Extensions\TaskFactory\Lookup`2\FromTaskEnumerable.cs" />
-    <Compile Include="Extensions\TaskFactory\ReadOnlyCollection`\FromTaskEnumerable.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\Array\FromTaskEnumerable.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\Collection`\FromTaskEnumerable.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\Dictionary`2\FromTaskEnumerable.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\FromEnumerableAsync.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\ICollection`\FromTaskEnumerable.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\IDictionary`2\FromTaskEnumerable.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\IEnumerable\FromTaskEnumerable.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\IEnumerable`\FromTaskEnumerable.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\IList`\FromTaskEnumerable.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\ILookup`2\FromTaskEnumerable.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\IOrdoredEnumerable`\FromTaskEnumerable.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\IReadOnlyCollection`\FromTaskEnumerable.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\IReadOnlyDictionary`2\FromTaskEnumerable.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\IReadOnlyList`\FromTaskEnumerable.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\List\FromTaskEnumerable.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\Lookup`2\FromTaskEnumerable.cs" />
+    <Compile Include="EnumerableAsync\TaskFactory\ReadOnlyCollection`\FromTaskEnumerable.cs" />
     <Compile Include="LinqAsyncManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="EnumerableAsync\EnumerableTask\Immediate_EnumerableTask\IEnumerable`\" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

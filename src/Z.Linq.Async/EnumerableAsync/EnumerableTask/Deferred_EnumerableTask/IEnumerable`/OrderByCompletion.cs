@@ -12,12 +12,12 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Z.Linq.Async
+namespace Z.Linq
 {
     /// <summary>
     ///     Provides extension methods for tasks.
     /// </summary>
-    public static class TaskExtensions
+    public static partial class EnumerableAsync
     {
         /// <summary>
         ///     Creates a new array of tasks which complete in order.
@@ -65,7 +65,7 @@ namespace Z.Linq.Async
         /// <param name="this">The task completion source. May not be <c>null</c>.</param>
         /// <param name="task">The task. May not be <c>null</c>.</param>
         /// <returns><c>true</c> if this method completed the task completion source; <c>false</c> if it was already completed.</returns>
-        public static bool TryCompleteFromCompletedTask<TResult>(this TaskCompletionSource<TResult> @this, Task<TResult> task)
+        internal static bool TryCompleteFromCompletedTask<TResult>(this TaskCompletionSource<TResult> @this, Task<TResult> task)
         {
             Contract.Requires(@this != null);
             Contract.Requires(task != null);

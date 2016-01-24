@@ -7,15 +7,18 @@
 
 namespace Z.Linq.Async
 {
-    public class LinqAsyncManager
+    public static class LinqAsyncManager
     {
         static LinqAsyncManager()
         {
-            DefaultValueOrderByPredicateCompletion = false;
-            DefaultValueStartAllPredicate = false;
+            DefaultValue.OrderByPredicateCompletion = false;
+            DefaultValue.StartPredicateConcurrently = false;
         }
 
-        public static bool DefaultValueOrderByPredicateCompletion { get; set; }
-        public static bool DefaultValueStartAllPredicate { get; set; }
+        public static class DefaultValue
+        {
+            public static bool OrderByPredicateCompletion { get; set; }
+            public static bool StartPredicateConcurrently { get; set; }
+        }
     }
 }

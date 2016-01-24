@@ -5,18 +5,19 @@
 // More projects: http://www.zzzprojects.com/
 // Copyright (c) 2015 ZZZ Projects. All rights reserved.
 
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Z.Linq.Async;
 
 namespace Z.Linq
 {
     public static partial class EnumerableAsync
     {
-        public static Task<List<TSource>> ToListAsync<TSource>(this IEnumerable<Task<TSource>> source, CancellationToken cancellationToken = default(CancellationToken))
+        public static Task<AsyncWhereEnumerable<TSource>> StartAllPredicate<TSource>(this Task<AsyncWhereEnumerable<TSource>> source, bool value = true, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return Task.Factory.FromEnumerable(source.Select(x => x.Result), Enumerable.ToList, cancellationToken);
+            var sourceState = (AsyncWhereEnumerable<TSource>) source.AsyncState;
+            sourceState.StartPredicateConcurrently = value;
+            return source;
         }
     }
 }
