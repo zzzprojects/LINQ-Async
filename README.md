@@ -6,10 +6,10 @@ Version | NuGet | NuGet Install
 Z.Linq.AsyncExtensions | <a href="https://www.nuget.org/packages/Z.Linq.Async/" target="_blank" alt="download nuget"><img src="https://img.shields.io/nuget/v/Z.Linq.Async.svg?style=flat-square" /></a> <a href="https://www.nuget.org/packages/Z.Linq.Async/" target="_blank" alt="download nuget"><img src="https://img.shields.io/nuget/dt/Z.Linq.Async.svg?style=flat-square" /></a> | ```PM> Install-Package Z.Linq.Async```
 
 ## Features
-- LINQ Async Extensions
-- LINQ Async Predicate Extensions
-- LINQ Async Task Extensions
-- LINQ Async Enumerable Task Extensions
+- [LINQ Async Extensions](https://github.com/zzzprojects/LINQ-Async/wiki/LINQ-AsyncExtensions)
+- [LINQ Async Predicate Extensions](https://github.com/zzzprojects/LINQ-Async/wiki/LINQ-AsyncPredicateExtensions)
+- [LINQ Async Task Extensions](https://github.com/zzzprojects/LINQ-Async/wiki/LINQ-AsyncTaskExtensions)
+- [LINQ Async Enumerable Task Extensions](https://github.com/zzzprojects/LINQ-Async/wiki/LINQ-AsyncEnumerableExtensions)
 
 _All LINQ Enumerable extensions methods are supported._
 
