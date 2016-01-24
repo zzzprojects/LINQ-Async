@@ -120,7 +120,7 @@ public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellati
 }
 ```
 
-**[Learn more](https://github.com/zzzprojects/LINQ-AsyncExtensions/wiki/LINQ-AsyncTaskExtensions)**
+**[Learn more](https://github.com/zzzprojects/LINQ-AsyncExtensions/wiki/LINQ-AsyncEnumerableExtensions)**
 
 ## More Projects
 - Entity Framework
