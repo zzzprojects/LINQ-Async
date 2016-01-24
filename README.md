@@ -44,8 +44,8 @@ Async Predicate extension methods allow to perform operation using an async pred
 
 ```chsarp
 // Using Z.Linq
-LinqAsyncManager.DefautValueOrderByPredicateCompletion = false;
-LinqAsyncManager.StartPredicateConcurrently = false;
+LinqAsyncManager.DefautlValue.OrderByPredicateCompletion = true;
+LinqAsyncManager.DefaultValue.StartPredicateConcurrently = false;
 
 public Task<IEnumerable<Customer>> MyAsyncTaskMethod(CancellationToken cancellationToken)
 {
