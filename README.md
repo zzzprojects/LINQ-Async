@@ -5,6 +5,11 @@ Version | NuGet | NuGet Install
 ------------ | :-------------: | :-------------:
 Z.Linq.AsyncExtensions | <a href="https://www.nuget.org/packages/Z.Linq.Async/" target="_blank" alt="download nuget"><img src="https://img.shields.io/nuget/v/Z.Linq.Async.svg?style=flat-square" /></a> <a href="https://www.nuget.org/packages/Z.Linq.Async/" target="_blank" alt="download nuget"><img src="https://img.shields.io/nuget/dt/Z.Linq.Async.svg?style=flat-square" /></a> | ```PM> Install-Package Z.Linq.Async```
 
+Stay updated with latest changes
+
+<a href="https://twitter.com/zzzprojects" target="_blank"><img src="http://www.zzzprojects.com/images/twitter_follow.png" alt="Twitter Follow" height="24" /></a>
+<a href="https://www.facebook.com/zzzprojects/" target="_blank"><img src="http://www.zzzprojects.com/images/facebook_like.png" alt="Facebook Like" height="24" /></a>
+
 ## Features
 - [LINQ Async Extensions](https://github.com/zzzprojects/LINQ-Async/wiki/LINQ-AsyncExtensions)
 - [LINQ Async Predicate Extensions](https://github.com/zzzprojects/LINQ-Async/wiki/LINQ-AsyncPredicateExtensions)
