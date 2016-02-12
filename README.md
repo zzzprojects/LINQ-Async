@@ -19,6 +19,10 @@ Stay updated with latest changes
 _All LINQ Enumerable extensions methods are supported._
 
 ## LINQ Async Extensions
+##### Problem
+Z
+
+##### Solution
 Async extension methods allow to perform operation on LINQ to objects asynchronously.
 
 ```chsarp
@@ -40,6 +44,10 @@ public Task<IEnumerable<Customer>> MyAsyncMethod(CancellationToken cancellationT
 **[Learn more](https://github.com/zzzprojects/LINQ-AsyncExtensions/wiki/LINQ-AsyncExtensions)**
 
 ## LINQ Async Predicate Extensions
+##### Problem
+Z
+
+##### Solution
 Async Predicate extension methods allow to perform operation using an async predicate on LINQ to objects asynchronously.
 
 **Support:**
@@ -69,6 +77,10 @@ public Task<IEnumerable<Customer>> MyAsyncTaskMethod(CancellationToken cancellat
 **[Learn more](https://github.com/zzzprojects/LINQ-AsyncExtensions/wiki/LINQ-AsyncPredicateExtensions)**
 
 ## LINQ Async Task Extensions
+##### Problem
+Z
+
+##### Solution
 Async Task extension methods allow to perform operation on Task&lt;IEnumerable&lt;T&gt;&gt;.
 
 ```chsarp
@@ -92,6 +104,10 @@ public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellati
 **[Learn more](https://github.com/zzzprojects/LINQ-AsyncExtensions/wiki/LINQ-AsyncTaskExtensions)**
 
 ## LINQ Async Enumerable Extensions
+##### Problem
+Z
+
+##### Solution
 Async Task extension methods allow to perform operation on IEnumerable&lt;Task&lt;T&gt;&gt;.
 
 **Support:**
