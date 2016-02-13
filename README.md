@@ -70,7 +70,7 @@ All LINQ extensions methods and overloads using a predicate is supported. You ca
 ```chsarp
 // Using Z.Linq
 
-//Change global default value
+// Change global default value
 LinqAsyncManager.DefautlValue.OrderByPredicateCompletion = false;
 LinqAsyncManager.DefaultValue.StartPredicateConcurrently = false;
 
