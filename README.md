@@ -5,7 +5,7 @@
 <a href="https://www.nuget.org/packages/Z.Linq.Async/" target="_blank"><img src="http://entityframework-plus.net/images/nuget/linq-async-d.svg" alt="" /></a>
 
 ```
-Install-Package Z.Linq.Async
+PM> Install-Package Z.Linq.Async
 ```
 
 Stay updated with latest changes
