@@ -22,16 +22,12 @@ Stay updated with latest changes
 <a href="https://twitter.com/zzzprojects" target="_blank"><img src="http://www.zzzprojects.com/images/twitter_follow.png" alt="Twitter Follow" height="24" /></a>
 <a href="https://www.facebook.com/zzzprojects/" target="_blank"><img src="http://www.zzzprojects.com/images/facebook_like.png" alt="Facebook Like" height="24" /></a>
 
-
-
-_All LINQ Enumerable extensions methods are supported._
-
 ## LINQ Async Extensions
 ##### Problem
-Z
+You want to use LINQ methods asynchronously.
 
 ##### Solution
-Async extension methods allow to perform operation on LINQ to objects asynchronously.
+All LINQ extensions methods and overloads are supported. You can easily create any asynchronous task.
 
 ```chsarp
 // Using Z.Linq
@@ -47,21 +43,28 @@ public Task<IEnumerable<Customer>> MyAsyncMethod(CancellationToken cancellationT
 }
 ```
 
-> If a cancellationToken is used, "ThrowIfCancellationRequested()" is invoked in the Enumerator.MoveNext() method.
-
-**[Learn more](https://github.com/zzzprojects/LINQ-AsyncExtensions/wiki/LINQ-AsyncExtensions)**
-
 ## LINQ Async Predicate Extensions
 ##### Problem
-Z
+You want to resolve a predicate asynchronously and start all predicates concurrently and/or order them by completion.
 
 ##### Solution
-Async Predicate extension methods allow to perform operation using an async predicate on LINQ to objects asynchronously.
+All LINQ extensions methods and overloads using a predicate is supported. You can easily use an asynchronously predicate and choose how the predicate will be resolved:
+ - OrderByPredicateCompletion(bool)
+ - StatePredicateConcurrently(bool)
 
 **Support:**
-- OrderByPredicateCompletion
-- StartPredicateConcurrently
-- Default value when none is specified
+- Deferred
+   - SkipWhile
+   - Where
+- Immediate
+   - All
+   - Any
+   - Count
+   - First
+   - FirstOrDefault
+   - LongCount
+   - Single
+   - SingleOrDefault
 
 ```chsarp
 // Using Z.Linq
@@ -86,10 +89,17 @@ public Task<IEnumerable<Customer>> MyAsyncTaskMethod(CancellationToken cancellat
 
 ## LINQ Async Task Extensions
 ##### Problem
-Z
+You want to chain LINQ methods with Task&lt;IEnumerable&lt;T&gt;&gt;.
 
 ##### Solution
-Async Task extension methods allow to perform operation on Task&lt;IEnumerable&lt;T&gt;&gt;.
+All LINQ extensions methods and overloads are supported, you can easily chain multiples LINQ methods before awaiting your final task.
+
+**Support:**
+ - Array
+ - Enumerable
+ - List
+
+_Other types must use "AsEnumerable()" method to allow to chain LINQ methods._
 
 ```chsarp
 // Using Z.Linq
@@ -113,7 +123,7 @@ public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellati
 
 ## LINQ Async Enumerable Extensions
 ##### Problem
-Z
+You want to use LINQ methods with enumerable task and order them by completion.
 
 ##### Solution
 Async Task extension methods allow to perform operation on IEnumerable&lt;Task&lt;T&gt;&gt;.
