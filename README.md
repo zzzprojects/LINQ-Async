@@ -121,7 +121,7 @@ public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellati
 
 **[Learn more](https://github.com/zzzprojects/LINQ-AsyncExtensions/wiki/LINQ-AsyncTaskExtensions)**
 
-## LINQ Async Enumerable Extensions
+## LINQ Async Enumerable Task Extensions
 ##### Problem
 You want to use LINQ methods with enumerable task and order them by completion.
 
