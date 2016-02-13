@@ -1,4 +1,13 @@
-##Use and chain async extension method in LINQ (Langugage Integrated Query)##
+## C# LINQ Async extension methods library for async/await task
+
+## Features
+- <a href="#linq-async-extensions">LINQ Async Extensions</a>
+- <a href="#linq-async-predicate-extensions">LINQ Async Precicate Extensions</a>
+   - OrderByPredicateCompletion
+   - StartPredicateConcurrently
+- <a href="#linq-async-task-extensions">LINQ Async Task Extensions</a>
+- <a href="#linq-async-enumerable-task-extensions">LINQ Async Enumerable Task Extensions</a>
+   - OrderByCompletion
 
 ## Download
 <a href="https://www.nuget.org/packages/Z.Linq.Async/" target="_blank"><img src="http://entityframework-plus.net/images/nuget/linq-async-v.svg" alt="download" /></a>
@@ -13,11 +22,7 @@ Stay updated with latest changes
 <a href="https://twitter.com/zzzprojects" target="_blank"><img src="http://www.zzzprojects.com/images/twitter_follow.png" alt="Twitter Follow" height="24" /></a>
 <a href="https://www.facebook.com/zzzprojects/" target="_blank"><img src="http://www.zzzprojects.com/images/facebook_like.png" alt="Facebook Like" height="24" /></a>
 
-## Features
-- [LINQ Async Extensions](https://github.com/zzzprojects/LINQ-Async/wiki/LINQ-AsyncExtensions)
-- [LINQ Async Predicate Extensions](https://github.com/zzzprojects/LINQ-Async/wiki/LINQ-AsyncPredicateExtensions)
-- [LINQ Async Task Extensions](https://github.com/zzzprojects/LINQ-Async/wiki/LINQ-AsyncTaskExtensions)
-- [LINQ Async Enumerable Task Extensions](https://github.com/zzzprojects/LINQ-Async/wiki/LINQ-AsyncEnumerableExtensions)
+
 
 _All LINQ Enumerable extensions methods are supported._
 
