@@ -13,7 +13,7 @@ namespace Z.Linq
 {
     public static partial class EnumerableAsync
     {
-        public static Task<AsyncWhereEnumerable<TSource>> StartAllPredicate<TSource>(this Task<AsyncWhereEnumerable<TSource>> source, bool value = true, CancellationToken cancellationToken = default(CancellationToken))
+        public static Task<AsyncWhereEnumerable<TSource>> StartPredicateConcurrently<TSource>(this Task<AsyncWhereEnumerable<TSource>> source, bool value = true, CancellationToken cancellationToken = default(CancellationToken))
         {
             var sourceState = (AsyncWhereEnumerable<TSource>) source.AsyncState;
             sourceState.StartPredicateConcurrently = value;

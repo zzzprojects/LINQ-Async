@@ -20,7 +20,7 @@ namespace Z.Linq
             source = new AsyncWhereEnumerable<T>(source, predicate, cancellationToken);
 
             var taskEnumerable = FromTaskEnumerable(taskFactory, source, enums => enums, AsyncWhereEnumerable<T>.CreateFrom, cancellationToken);
-            var taskWhereEnumerable = taskEnumerable.ContinueWith((t, x) => new AsyncWhereEnumerable<T>(t.Result), source, cancellationToken);
+            var taskWhereEnumerable = taskEnumerable.ContinueWith((t, x) => new AsyncWhereEnumerable<T>(t.Result), source, cancellationToken, TaskContinuationOptions.ExecuteSynchronously, TaskScheduler.Default);
 
             return taskWhereEnumerable;
         }
@@ -30,7 +30,7 @@ namespace Z.Linq
             source = new AsyncWhereEnumerable<T>(source, predicate, cancellationToken);
 
             var taskEnumerable = FromTaskEnumerable(taskFactory, source, enums => enums, AsyncWhereEnumerable<T>.CreateFrom, cancellationToken);
-            var taskWhereEnumerable = taskEnumerable.ContinueWith((t, x) => new AsyncWhereEnumerable<T>(t.Result), source, cancellationToken);
+            var taskWhereEnumerable = taskEnumerable.ContinueWith((t, x) => new AsyncWhereEnumerable<T>(t.Result), source, cancellationToken, TaskContinuationOptions.ExecuteSynchronously, TaskScheduler.Default);
 
             return taskWhereEnumerable;
         }

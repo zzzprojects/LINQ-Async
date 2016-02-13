@@ -9,13 +9,13 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("Z.Linq.Async")]
-[assembly: AssemblyDescription("Async extension methods for LINQ (Language Integrated Query).")]
+[assembly: AssemblyDescription("C# LINQ Async extension methods library for async/await task.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("ZZZ Projects")]
+[assembly: AssemblyCompany("ZZZ Projects Inc.")]
 [assembly: AssemblyProduct("Z.Linq.Async")]
-[assembly: AssemblyCopyright("ZZZ Projects Inc. Copyright © 2015")]
+[assembly: AssemblyCopyright("Copyright © ZZZ Projects Inc. 2014 - 2016")]
 [assembly: AssemblyTrademark("SQL & .NET Tools")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
-[assembly: AssemblyVersion("0.0.4")]
-[assembly: AssemblyFileVersion("0.0.4")]
+[assembly: AssemblyVersion("1.0.0")]
+[assembly: AssemblyFileVersion("1.0.0")]

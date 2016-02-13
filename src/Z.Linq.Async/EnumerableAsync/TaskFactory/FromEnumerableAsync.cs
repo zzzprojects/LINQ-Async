@@ -18,9 +18,10 @@ namespace Z.Linq
             return Task.Run(() => func(converter(source, cancellationToken)), cancellationToken);
         }
 
-        private static Task<TResult> FromTaskEnumerable<T, TAsyncEnumerable, TResult>(this TaskFactory taskFactory, Task<T> task, Func<TAsyncEnumerable, TResult> func, Func<T, CancellationToken, TAsyncEnumerable> converter, CancellationToken cancellationToken = default(CancellationToken))
+        private static async Task<TResult> FromTaskEnumerable<T, TAsyncEnumerable, TResult>(this TaskFactory taskFactory, Task<T> task, Func<TAsyncEnumerable, TResult> func, Func<T, CancellationToken, TAsyncEnumerable> converter, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return task.ContinueWith(t => func(converter(task.Result, cancellationToken)), cancellationToken);
+            var result = await task.ConfigureAwait(false);
+            return func(converter(result, cancellationToken));
         }
     }
 }

@@ -45,7 +45,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\OrderByCompletion.cs" />
-    <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\SelectResultByCompletion.cs" />
     <Compile Include="EnumerableAsync\EnumerableTask\Deferred_EnumerableTask\IEnumerable`\SelectResult.cs" />
     <Compile Include="EnumerableAsync\LINQ\Deferred_Task\Array\OrderBy.cs" />
     <Compile Include="EnumerableAsync\LINQ\Deferred_Task\Array\OrderByDescending.cs" />
