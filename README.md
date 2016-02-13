@@ -8,6 +8,7 @@
 - <a href="#linq-async-task-extensions">LINQ Async Task Extensions</a>
 - <a href="#linq-async-enumerable-task-extensions">LINQ Async Enumerable Task Extensions</a>
    - OrderByCompletion
+   - SelectResult
 
 ## Download
 <a href="https://www.nuget.org/packages/Z.Linq.Async/" target="_blank"><img src="http://entityframework-plus.net/images/nuget/linq-async-v.svg" alt="download" /></a>
