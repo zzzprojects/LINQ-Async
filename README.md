@@ -1,9 +1,12 @@
 ##Use and chain async extension method in LINQ (Langugage Integrated Query)##
 
 ## Download
-Version | NuGet | NuGet Install
------------- | :-------------: | :-------------:
-Z.Linq.AsyncExtensions | <a href="https://www.nuget.org/packages/Z.Linq.Async/" target="_blank" alt="download nuget"><img src="https://img.shields.io/nuget/v/Z.Linq.Async.svg?style=flat-square" /></a> <a href="https://www.nuget.org/packages/Z.Linq.Async/" target="_blank" alt="download nuget"><img src="https://img.shields.io/nuget/dt/Z.Linq.Async.svg?style=flat-square" /></a> | ```PM> Install-Package Z.Linq.Async```
+<a href="https://www.nuget.org/packages/Z.Linq.Async/" target="_blank"><img src="http://entityframework-plus.net/images/nuget/linq-async-v.svg" alt="download" /></a>
+<a href="https://www.nuget.org/packages/Z.Linq.Async/" target="_blank"><img src="http://entityframework-plus.net/images/nuget/linq-async-d.svg" alt="" /></a>
+
+```
+Install-Package Z.Linq.Async
+```
 
 Stay updated with latest changes
 
