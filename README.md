@@ -35,7 +35,7 @@ All LINQ extensions methods and overloads are supported. You can easily create a
 public Task<IEnumerable<Customer>> MyAsyncMethod(CancellationToken cancellationToken)
 {
     List<Customer> customers = DB.GetCustomers();
-    var task = list.WhereAsync(c => c.IsActive, cancellationToken);
+    var task = list.WhereAsync(c => /* long predicate */, cancellationToken);
 
     // ... synchronous code ...
     
@@ -68,7 +68,9 @@ All LINQ extensions methods and overloads using a predicate is supported. You ca
 
 ```chsarp
 // Using Z.Linq
-LinqAsyncManager.DefautlValue.OrderByPredicateCompletion = true;
+
+//Change global default value
+LinqAsyncManager.DefautlValue.OrderByPredicateCompletion = false;
 LinqAsyncManager.DefaultValue.StartPredicateConcurrently = false;
 
 public Task<IEnumerable<Customer>> MyAsyncTaskMethod(CancellationToken cancellationToken)
@@ -126,26 +128,24 @@ public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellati
 You want to use LINQ methods with enumerable task and order them by completion.
 
 ##### Solution
-Async Task extension methods allow to perform operation on IEnumerable&lt;Task&lt;T&gt;&gt;.
 
 **Support:**
 - OrderByCompletion
-- SelectResult
-- SelectResultByCompletion
+- SelectResult 
 
 ```chsarp
 // Using Z.Linq
 
 public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellationToken)
 {
-    int customerID = 4;
-    
     // GET customer from concurrent web service
-    IEnumerable<Task<List<Customer>>> task =  WebService.GetCustomers(4);
+    IEnumerable<Task<List<Customer>>> task =  WebService.GetCustomers();
     
     // GET the customer list from the first web service completed
     var taskFirstCompleted = task.SelectResultByCompletion()
-                                 .First();
+                                 .SelectResult()
+								 .First()
+								 
                    
     // GET the five first customers which the predicate has completed
     var task = taskFirstCompleted.WhereAsync(c => MyAsyncPredicate(DB.IsCustomerActiveAsync(c)))
