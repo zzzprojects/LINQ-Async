@@ -1,4 +1,4 @@
-## C# LINQ Async extension methods library for async/await task
+# Chain async task and order async predicate with fluent API.
 
 ## Features
 - <a href="#linq-async-extensions">LINQ Async Extensions</a>
