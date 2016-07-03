@@ -11,8 +11,8 @@
    - SelectResult
 
 ## Download
-<a href="https://www.nuget.org/packages/Z.Linq.Async/" target="_blank"><img src="http://entityframework-plus.net/images/nuget/linq-async-v.svg" alt="download" /></a>
-<a href="https://www.nuget.org/packages/Z.Linq.Async/" target="_blank"><img src="http://entityframework-plus.net/images/nuget/linq-async-d.svg" alt="" /></a>
+<a href="https://www.nuget.org/packages/Z.Linq.Async/" target="_blank"><img src="https://zzzprojects.github.io/images/nuget/linq-async-v.svg" alt="download" /></a>
+<a href="https://www.nuget.org/packages/Z.Linq.Async/" target="_blank"><img src="https://zzzprojects.github.io/images/nuget/linq-async-d.svg" alt="" /></a>
 
 ```
 PM> Install-Package Z.Linq.Async
