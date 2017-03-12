@@ -17,7 +17,7 @@ namespace Z.Linq
     {
         public static Task<TSource> SingleOrDefaultAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<bool>> predicate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return Task.Factory.FromEnumerable(source, predicate, Enumerable.SingleOrDefault, cancellationToken);
+            return Task.Factory.FromEnumerable(source, predicate, Enumerable.SingleOrDefault, false, cancellationToken);
         }
     }
 }

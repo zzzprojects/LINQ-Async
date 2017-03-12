@@ -50,9 +50,9 @@ namespace Z.Linq
             return FromTaskEnumerable(taskFactory, source, enums => func(enums, p1), AsyncEnumerable<T>.CreateFrom, cancellationToken);
         }
 
-        public static Task<TResult> FromEnumerable<T, TResult>(this TaskFactory taskFactory, IEnumerable<T> source, Func<T, Task<bool>> predicate, Func<IEnumerable<T>, Func<T, bool>, TResult> func, CancellationToken cancellationToken = default(CancellationToken))
+        public static Task<TResult> FromEnumerable<T, TResult>(this TaskFactory taskFactory, IEnumerable<T> source, Func<T, Task<bool>> predicate, Func<IEnumerable<T>, Func<T, bool>, TResult> func, bool skipFilterPredicate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            source = new AsyncWhereEnumerable<T>(source, predicate, cancellationToken);
+            source = new AsyncWhereEnumerable<T>(source, predicate, cancellationToken) { SkipFilterPredicate = skipFilterPredicate};
 
             Func<T, bool> predicateOrdered = source1 => predicate(source1).Result;
             return Task.Factory.FromEnumerable(source, predicateOrdered, func, cancellationToken);

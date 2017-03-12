@@ -80,6 +80,8 @@ namespace Z.Linq.Async
 
         public bool OrderByPredicateCompletion { get; set; }
 
+        public bool SkipFilterPredicate { get; set; }
+
         private Task<IEnumerable<T>> SourceTask { get; }
 
         private IEnumerable<T> Source { get; set; }
@@ -97,20 +99,41 @@ namespace Z.Linq.Async
 
             if (Predicate != null)
             {
-                if (OrderByPredicateCompletion)
+                if (SkipFilterPredicate)
                 {
-                    var enumerator2 = Source.Select(x => Task.Run(() => new Tuple<T, bool>(x, Predicate(x).Result), CancellationToken)).OrderByCompletion().Where(x => x.Result.Item2).Select(x => x.Result.Item1);
-                    enumerator = enumerator2.GetEnumerator();
-                }
-                else if (StartPredicateConcurrently)
-                {
-                    var enumerator2 = Source.Select(x => Task.Run(() => new Tuple<T, bool>(x, Predicate(x).Result), CancellationToken)).ToList().Where(x => x.Result.Item2).Select(x => x.Result.Item1);
-                    enumerator = enumerator2.GetEnumerator();
+                    if (OrderByPredicateCompletion)
+                    {
+                        var enumerator2 = Source.Select(x => Task.Run(() => new Tuple<T, bool>(x, Predicate(x).Result), CancellationToken)).OrderByCompletion().Select(x => x.Result.Item1);
+                        enumerator = enumerator2.GetEnumerator();
+                    }
+                    else if (StartPredicateConcurrently)
+                    {
+                        var enumerator2 = Source.Select(x => Task.Run(() => new Tuple<T, bool>(x, Predicate(x).Result), CancellationToken)).ToList().Select(x => x.Result.Item1);
+                        enumerator = enumerator2.GetEnumerator();
+                    }
+                    else
+                    {
+                        var enumerator2 = Source.Select(x => Task.Run(() => new Tuple<T, bool>(x, Predicate(x).Result), CancellationToken)).Select(x => x.Result.Item1);
+                        enumerator = enumerator2.GetEnumerator();
+                    }
                 }
                 else
                 {
-                    var enumerator2 = Source.Select(x => Task.Run(() => new Tuple<T, bool>(x, Predicate(x).Result), CancellationToken)).Where(x => x.Result.Item2).Select(x => x.Result.Item1);
-                    enumerator = enumerator2.GetEnumerator();
+                    if (OrderByPredicateCompletion)
+                    {
+                        var enumerator2 = Source.Select(x => Task.Run(() => new Tuple<T, bool>(x, Predicate(x).Result), CancellationToken)).OrderByCompletion().Where(x => x.Result.Item2).Select(x => x.Result.Item1);
+                        enumerator = enumerator2.GetEnumerator();
+                    }
+                    else if (StartPredicateConcurrently)
+                    {
+                        var enumerator2 = Source.Select(x => Task.Run(() => new Tuple<T, bool>(x, Predicate(x).Result), CancellationToken)).ToList().Where(x => x.Result.Item2).Select(x => x.Result.Item1);
+                        enumerator = enumerator2.GetEnumerator();
+                    }
+                    else
+                    {
+                        var enumerator2 = Source.Select(x => Task.Run(() => new Tuple<T, bool>(x, Predicate(x).Result), CancellationToken)).Where(x => x.Result.Item2).Select(x => x.Result.Item1);
+                        enumerator = enumerator2.GetEnumerator();
+                    }
                 }
             }
             else if (Predicate2 != null)

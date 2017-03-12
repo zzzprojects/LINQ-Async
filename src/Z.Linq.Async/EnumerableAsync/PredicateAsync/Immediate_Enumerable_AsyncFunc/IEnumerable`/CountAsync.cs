@@ -17,7 +17,7 @@ namespace Z.Linq
     {
         public static Task<int> CountAsync<TSource>(this IEnumerable<TSource> source, Func<TSource, Task<bool>> predicate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return Task.Factory.FromEnumerable(source, predicate, Enumerable.Count, cancellationToken);
+            return Task.Factory.FromEnumerable(source, predicate, Enumerable.Count, false, cancellationToken);
         }
     }
 }
