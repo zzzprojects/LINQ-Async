@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2019
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z.Linq.Async", "Z.Linq.Async\Z.Linq.Async.csproj", "{8893C88A-9A81-4269-A479-E5A5AF33B94D}"
 EndProject
@@ -9,7 +9,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{85D28F09-D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z.Test.Linq.Async", "test\Z.Test.Linq.Async\Z.Test.Linq.Async.csproj", "{51938F78-E4FE-4CE0-9343-AC62DB552025}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z.Linq.Async.NetStandard20", "Z.Linq.Async.NetStandard20\Z.Linq.Async.NetStandard20.csproj", "{CFCA713B-34D9-4D00-B478-2A5B25C6403E}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Z.Linq.Async.Shared", "Z.Linq.Async.Shared\Z.Linq.Async.Shared.shproj", "{9E4CC057-6A64-4A8B-8E65-65EAE53488BF}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Z.Linq.Async.Shared\Z.Linq.Async.Shared.projitems*{8893c88a-9a81-4269-a479-e5a5af33b94d}*SharedItemsImports = 4
+		Z.Linq.Async.Shared\Z.Linq.Async.Shared.projitems*{9e4cc057-6a64-4a8b-8e65-65eae53488bf}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -23,11 +31,18 @@ Global
 		{51938F78-E4FE-4CE0-9343-AC62DB552025}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51938F78-E4FE-4CE0-9343-AC62DB552025}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51938F78-E4FE-4CE0-9343-AC62DB552025}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFCA713B-34D9-4D00-B478-2A5B25C6403E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFCA713B-34D9-4D00-B478-2A5B25C6403E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFCA713B-34D9-4D00-B478-2A5B25C6403E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFCA713B-34D9-4D00-B478-2A5B25C6403E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{51938F78-E4FE-4CE0-9343-AC62DB552025} = {85D28F09-DFB3-409C-877B-8E6546D87C1F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F1FF45B-4B61-4F59-A668-C5B7184F74A5}
 	EndGlobalSection
 EndGlobal

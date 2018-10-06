@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Z.Linq.Async</PackageId>
+    <Version>1.0.3</Version>
+    <Authors>ZZZ Projects</Authors>
+    <Product>Z.Linq.Async</Product>
+    <Description>C# LINQ Async extension methods library for async/await task.</Description>
+    <Copyright>ZZZ Projects</Copyright>
+    <PackageLicenseUrl>https://github.com/zzzprojects/LINQ-Async/blob/master/LICENSE</PackageLicenseUrl>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>zzzproject.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyName>Z.Linq.Async</AssemblyName>
+    <RootNamespace>Z.Linq.Async</RootNamespace>
+  </PropertyGroup>
+
+  <Import Project="..\Z.Linq.Async.Shared\Z.Linq.Async.Shared.projitems" Label="Shared" />
+
+</Project>
