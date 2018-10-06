@@ -9,9 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{85D28F09-D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z.Test.Linq.Async", "test\Z.Test.Linq.Async\Z.Test.Linq.Async.csproj", "{51938F78-E4FE-4CE0-9343-AC62DB552025}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z.Linq.Async.NetStandard20", "Z.Linq.Async.NetStandard20\Z.Linq.Async.NetStandard20.csproj", "{CFCA713B-34D9-4D00-B478-2A5B25C6403E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Z.Linq.Async.NetStandard20", "Z.Linq.Async.NetStandard20\Z.Linq.Async.NetStandard20.csproj", "{CFCA713B-34D9-4D00-B478-2A5B25C6403E}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Z.Linq.Async.Shared", "Z.Linq.Async.Shared\Z.Linq.Async.Shared.shproj", "{9E4CC057-6A64-4A8B-8E65-65EAE53488BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lab", "lab", "{91652E81-135B-47CF-B92C-98BED3A67EC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z.Lab.LinqAsync.NetCore", "lab\Z.Lab.LinqAsync.NetCore\Z.Lab.LinqAsync.NetCore.csproj", "{440A34AA-9335-4E4F-926C-EE1C99880573}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -35,12 +39,17 @@ Global
 		{CFCA713B-34D9-4D00-B478-2A5B25C6403E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFCA713B-34D9-4D00-B478-2A5B25C6403E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFCA713B-34D9-4D00-B478-2A5B25C6403E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{440A34AA-9335-4E4F-926C-EE1C99880573}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{440A34AA-9335-4E4F-926C-EE1C99880573}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{440A34AA-9335-4E4F-926C-EE1C99880573}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{440A34AA-9335-4E4F-926C-EE1C99880573}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{51938F78-E4FE-4CE0-9343-AC62DB552025} = {85D28F09-DFB3-409C-877B-8E6546D87C1F}
+		{440A34AA-9335-4E4F-926C-EE1C99880573} = {91652E81-135B-47CF-B92C-98BED3A67EC7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8F1FF45B-4B61-4F59-A668-C5B7184F74A5}
