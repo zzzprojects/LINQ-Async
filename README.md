@@ -12,7 +12,7 @@ This library is powered by [Entity Framework Extensions](https://entityframework
 
 # What's LINQ-Async?
 
-LINQ-Async allows you to **chain async task and order async predicate with fluent API**.
+LINQ-Async allows you to **chain async task and orders async predicate with fluent API**.
 
 ## Features
 - <a href="#linq-async-extensions">LINQ Async Extensions</a>
@@ -32,17 +32,12 @@ LINQ-Async allows you to **chain async task and order async predicate with fluen
 PM> Install-Package Z.Linq.Async
 ```
 
-Stay updated with latest changes
-
-<a href="https://twitter.com/zzzprojects" target="_blank"><img src="http://www.zzzprojects.com/images/twitter_follow.png" alt="Twitter Follow" height="24" /></a>
-<a href="https://www.facebook.com/zzzprojects/" target="_blank"><img src="http://www.zzzprojects.com/images/facebook_like.png" alt="Facebook Like" height="24" /></a>
-
 ## LINQ Async Extensions
 ##### Problem
 You want to use LINQ methods asynchronously.
 
 ##### Solution
-All LINQ extensions methods and overloads are supported. You can easily create any asynchronous task.
+All LINQ extension methods and overloads are supported. You can easily create any asynchronous task.
 
 ```chsarp
 // Using Z.Linq
@@ -63,7 +58,7 @@ public Task<IEnumerable<Customer>> MyAsyncMethod(CancellationToken cancellationT
 You want to resolve a predicate asynchronously and start all predicates concurrently and/or order them by completion.
 
 ##### Solution
-All LINQ extensions methods and overloads using a predicate is supported. You can easily use an asynchronously predicate and choose how the predicate will be resolved:
+All LINQ extension methods and overloads using a predicate are supported. You can easily use an asynchronously predicate and choose how the predicate will be resolved:
  - OrderByPredicateCompletion(bool)
  - StatePredicateConcurrently(bool)
 
@@ -109,7 +104,7 @@ public Task<IEnumerable<Customer>> MyAsyncTaskMethod(CancellationToken cancellat
 You want to chain LINQ methods with Task&lt;IEnumerable&lt;T&gt;&gt;.
 
 ##### Solution
-All LINQ extensions methods and overloads are supported, you can easily chain multiples LINQ methods before awaiting your final task.
+All LINQ extensions methods and overloads are supported. You can easily chain multiples LINQ methods before awaiting your final task.
 
 **Support:**
  - Array
@@ -140,7 +135,7 @@ public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellati
 
 ## LINQ Async Enumerable Task Extensions
 ##### Problem
-You want to use LINQ methods with enumerable task and order them by completion.
+You want to use LINQ methods with enumerable tasks and order them by completion.
 
 ##### Solution
 
@@ -178,22 +173,29 @@ public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellati
 
 ## Contribute
 
-You want to help us? 
-Your donation directly helps us maintaining and growing ZZZ Free Projects. We can’t thank you enough for your support.
+Want to help us? Your donation directly helps us maintain and grow ZZZ Free Projects. 
 
-### Why should I contribute to this free & open source library?
-We all love free and open source libraries!
-But there is a catch! Nothing is free in this world.
-Contributions allow us to spend more of our time on: Bug Fix, Content Writing, Development and Support.
+We can't thank you enough for your support 🙏.
+
+👍 [One-time donation](https://zzzprojects.com/contribute)
+
+❤️ [Become a sponsor](https://github.com/sponsors/zzzprojects) 
+
+### Why should I contribute to this free & open-source library?
+We all love free and open-source libraries! But there is a catch... nothing is free in this world.
 
 We NEED your help. Last year alone, we spent over **3000 hours** maintaining all our open source libraries.
 
-### How much should I contribute?
-Any amount is much appreciated. All our libraries together have more than 100 million downloads, if everyone could contribute a tiny amount, it would help us to make the .NET community a better place to code!
+Contributions allow us to spend more of our time on: Bug Fix, Development, Documentation, and Support.
 
-Another great free way to contribute is  **spreading the word** about the library!
- 
-A **HUGE THANKS** for your help.
+### How much should I contribute?
+Any amount is much appreciated. All our free libraries together have more than **100 million** downloads.
+
+If everyone could contribute a tiny amount, it would help us make the .NET community a better place to code!
+
+Another great free way to contribute is  **spreading the word** about the library.
+
+A **HUGE THANKS** for your help!
 
 ## More Projects
 
@@ -201,5 +203,5 @@ A **HUGE THANKS** for your help.
 - [Dapper Plus](https://dapper-plus.net/)
 - [C# Eval Expression](https://eval-expression.net/)
 - and much more! 
-To view all our free and paid librariries visit our [website](https://zzzprojects.com/).
 
+To view all our free and paid projects, visit our [website](https://zzzprojects.com/).
