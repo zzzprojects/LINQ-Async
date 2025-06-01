@@ -1,15 +1,3 @@
-## Library Powered By
-
-This library is powered by [Entity Framework Extensions](https://entityframework-extensions.net/?z=github&y=entityframework-plus)
-
-<a href="https://entityframework-extensions.net/?z=github&y=entityframework-plus">
-<kbd>
-<img src="https://zzzprojects.github.io/images/logo/entityframework-extensions-pub.jpg" alt="Entity Framework Extensions" />
-</kbd>
-</a>
-
----
-
 # What's LINQ-Async?
 
 LINQ-Async allows you to **chain async task and orders async predicate with fluent API**.
@@ -23,13 +11,28 @@ LINQ-Async allows you to **chain async task and orders async predicate with flue
 - <a href="#linq-async-enumerable-task-extensions">LINQ Async Enumerable Task Extensions</a>
    - OrderByCompletion
    - SelectResult
+ 
+## Sponsors
+
+ZZZ Projects owns and maintains **LINQ-Async** as part of our [mission](https://zzzprojects.com/mission) to add value to the .NET community
+
+Through [Entity Framework Extensions](https://entityframework-extensions.net/?utm_source=zzzprojects&utm_medium=linq-async) and [Dapper Plus](https://dapper-plus.net/?utm_source=zzzprojects&utm_medium=linq-async), we actively sponsor and help key open-source libraries grow.
+
+[![Entity Framework Extensions](https://raw.githubusercontent.com/zzzprojects/LINQ-Async/master/entity-framework-extensions-sponsor.png)](https://entityframework-extensions.net/bulk-insert?utm_source=zzzprojects&utm_medium=linq-async)
+
+[![Dapper Plus](https://raw.githubusercontent.com/zzzprojects/LINQ-Async/master/dapper-plus-sponsor.png)](https://dapper-plus.net/bulk-insert?utm_source=zzzprojects&utm_medium=linq-async)
 
 ## Download
-<a href="https://www.nuget.org/packages/Z.Linq.Async/" target="_blank"><img src="https://zzzprojects.github.io/images/nuget/linq-async-v.svg" alt="download" /></a>
-<a href="https://www.nuget.org/packages/Z.Linq.Async/" target="_blank"><img src="https://zzzprojects.github.io/images/nuget/linq-async-d.svg" alt="" /></a>
+
+[![nuget](https://img.shields.io/nuget/v/Z.Linq.Async?logo=nuget&style=flat-square)](https://www.nuget.org/packages/Z.Linq.Async)
+[![nuget](https://img.shields.io/nuget/dt/Z.Linq.Async?logo=nuget&style=flat-square)](https://www.nuget.org/packages/Z.Linq.Async)
 
 ```
-PM> Install-Package Z.Linq.Async
+PM> NuGet\Install-Package Z.EntityFramework.Plus.EFCore
+```
+
+```
+> dotnet add package Z.EntityFramework.Plus.EFCore
 ```
 
 ## LINQ Async Extensions
@@ -170,17 +173,6 @@ public async Task<List<Customer>> MyAsyncTaskMethod(CancellationToken cancellati
 ```
 
 **[Learn more](https://github.com/zzzprojects/LINQ-AsyncExtensions/wiki/LINQ-AsyncEnumerableExtensions)**
-
-## Contribute
-
-The best way to contribute is by **spreading the word** about the library:
-
- - Blog it
- - Comment it
- - Star it
- - Share it
- 
-A **HUGE THANKS** for your help.
 
 ## More Projects
 
